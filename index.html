@@ -406,7 +406,7 @@ a:hover {
 }
 
 /* Scroll reveal */
-.scroll-reveal {
+/* .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .8s ease, transform .8s ease;
@@ -415,6 +415,28 @@ a:hover {
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
+} */
+
+/* Scroll-linked animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-orb,
+.particle,
+.section,
+.experience,
+.project {
+  will-change: translate;
+  translate: 0 var(--scroll-shift, 0px);
+  transition: translate .12s linear;
 }
 
 /* Footer */
