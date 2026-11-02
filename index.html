@@ -5,279 +5,727 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASAJ1 | Azure & AI Platform Architect</title>
-<meta name="description" content="Professional portfolio of an Azure Cloud and AI Automation Platform Architect.">
+<meta name="description" content="Professional portfolio of an Azure and AI Automation Platform Architect with 12+ years of IT experience.">
+
 <style>
 :root {
-  --navy:#14243b;
-  --blue:#315d91;
-  --accent:#86a9d5;
-  --bg:#f4f6fa;
-  --text:#26364a;
-  --muted:#718096;
-  --white:#ffffff;
+  --bg: #07111f;
+  --panel: #101e30;
+  --panel-light: #14263b;
+  --text: #edf4ff;
+  --muted: #a9b8cc;
+  --blue: #62a5ff;
+  --cyan: #55d5e8;
+  --purple: #a98bff;
+  --border: rgba(160,190,230,.15);
 }
-* {box-sizing:border-box;scroll-behavior:smooth}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
 body {
-  margin:0;
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
-.banner {
-  height:245px;
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background:
-    linear-gradient(90deg,rgba(15,30,52,.72),rgba(30,55,85,.15)),
-    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85") center 48%/cover;
-  display:flex;
-  align-items:center;
-  padding:45px 7%;
-  color:white;
+    radial-gradient(circle at 10% 15%, rgba(45,115,210,.13), transparent 30%),
+    radial-gradient(circle at 90% 70%, rgba(115,75,220,.10), transparent 30%);
+  pointer-events: none;
+  z-index: -3;
 }
-.banner h1 {font-size:38px;margin:0 0 10px}
-.banner p {font-size:16px;margin:0;letter-spacing:.4px}
-.layout {
-  max-width:1250px;
-  margin:-65px auto 60px;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:285px minmax(0,1fr);
-  gap:25px;
-  align-items:start;
+
+a {
+  color: var(--blue);
+  text-decoration: none;
 }
+
+a:hover {
+  color: var(--cyan);
+}
+
+/* Animated background */
+.motion-orb {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65,130,255,.18), transparent 70%);
+  pointer-events: none;
+  z-index: -2;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+
+.orb-one {
+  top: 10%;
+  left: -100px;
+}
+
+.orb-two {
+  right: -100px;
+  top: 55%;
+  width: 230px;
+  height: 230px;
+  background: radial-gradient(circle, rgba(150,90,255,.17), transparent 70%);
+  animation-duration: 18s;
+}
+
+@keyframes floatOrb {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 100px); }
+}
+
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: .4;
+  pointer-events: none;
+  z-index: -1;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  from { transform: translateY(105vh); opacity: 0; }
+  15% { opacity: .45; }
+  85% { opacity: .35; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Hero banner */
+.hero {
+  min-height: 290px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 45px 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(110deg, rgba(5,14,28,.88), rgba(10,35,65,.60)),
+    url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85") center/cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: heroEnter 1.2s ease both;
+}
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: .5px;
+}
+
+.hero h1 span {
+  color: var(--cyan);
+}
+
+.hero p {
+  color: #d5e5f9;
+  font-size: 17px;
+}
+
+/* Main layout */
+.container {
+  width: min(1180px, 92%);
+  margin: 45px auto;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Sticky profile */
 .sidebar {
-  background:white;
-  border-radius:16px;
-  padding:25px 22px;
-  box-shadow:0 8px 30px rgba(25,45,75,.08);
-  position:sticky;
-  top:20px;
-  text-align:center;
+  position: sticky;
+  top: 25px;
+  background: rgba(16,30,48,.94);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 27px 22px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(0,0,0,.2);
+  backdrop-filter: blur(12px);
 }
+
 .profile-photo {
-  width:125px;
-  height:125px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid white;
-  box-shadow:0 3px 15px #0002;
-  margin-top:-75px;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--blue);
+  padding: 4px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 25px rgba(75,150,255,.22);
+  animation: photoGlow 4s ease-in-out infinite alternate;
 }
-.sidebar h2 {font-size:22px;margin:14px 0 5px;color:var(--navy)}
-.role {color:var(--blue);font-weight:600;font-size:13px;line-height:1.6}
-.location {font-size:13px;color:var(--muted);margin:12px 0 20px}
-.side-links {border-top:1px solid #edf0f4;padding-top:15px}
-.side-links a {
- display:block;text-decoration:none;color:#53647b;
- padding:9px 4px;font-size:14px;border-radius:7px;
+
+@keyframes photoGlow {
+  from { box-shadow: 0 0 12px rgba(75,150,255,.15); }
+  to { box-shadow: 0 0 30px rgba(75,150,255,.4); }
 }
-.side-links a:hover {background:#edf3fa;color:var(--blue)}
+
+.sidebar h2 {
+  font-size: 23px;
+  margin-bottom: 4px;
+}
+
+.sidebar .role {
+  color: var(--cyan);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.sidebar .location {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.profile-line {
+  height: 1px;
+  background: var(--border);
+  margin: 18px 0;
+}
+
+.profile-detail {
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 9px 0;
+}
+
+.profile-detail strong {
+  color: var(--text);
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: .3s;
+}
+
+.sidebar-nav a:hover {
+  color: white;
+  background: rgba(75,145,255,.15);
+  transform: translateX(4px);
+}
+
 .contact-button {
- display:block;margin-top:17px;padding:12px;
- background:var(--navy);color:white;text-decoration:none;
- border-radius:8px;font-weight:600;font-size:14px;
+  display: inline-block;
+  width: 100%;
+  padding: 11px;
+  margin-top: 18px;
+  background: linear-gradient(100deg, #287be0, #42b9d4);
+  color: white;
+  border-radius: 9px;
+  font-weight: 600;
+  transition: .3s;
 }
-.content {min-width:0}
+
+.contact-button:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(50,140,240,.3);
+}
+
+/* Content sections */
+.content {
+  min-width: 0;
+}
+
 .section {
- background:white;border-radius:14px;padding:27px 30px;
- margin-bottom:20px;box-shadow:0 5px 22px rgba(25,45,75,.045);
- scroll-margin-top:20px;
+  background: rgba(16,30,48,.88);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.12);
+  transition: border-color .3s, transform .3s;
 }
+
+.section:hover {
+  border-color: rgba(90,165,255,.42);
+}
+
 .section h2 {
- color:var(--navy);font-size:21px;margin:0 0 19px;
- padding-bottom:12px;border-bottom:2px solid #e8eef6;
+  font-size: 23px;
+  margin-bottom: 19px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
 }
-.section p {line-height:1.8;color:#58677a;font-size:14px}
-.tag-list {display:flex;flex-wrap:wrap;gap:9px}
-.tag {
- background:#edf3fa;color:#315d91;padding:8px 12px;
- border-radius:6px;font-size:12px;font-weight:600;
+
+.section h2::before {
+  content: "";
+  width: 4px;
+  height: 25px;
+  border-radius: 5px;
+  background: linear-gradient(var(--blue), var(--cyan));
 }
-.experience {border-left:3px solid #91afd2;padding:0 0 22px 20px;margin-left:5px;position:relative}
-.experience:before {
- content:"";position:absolute;left:-7px;top:3px;
- width:11px;height:11px;background:#527aa8;border-radius:50%;
+
+.section p {
+  color: var(--muted);
+  font-size: 15px;
 }
-.experience h3 {margin:0 0 5px;color:#263d5b;font-size:17px}
-.meta {font-size:12px;color:var(--muted);margin-bottom:12px}
-.experience ul {padding-left:19px;color:#58677a;font-size:14px;line-height:1.8}
+
+.experience {
+  padding: 18px;
+  margin-bottom: 17px;
+  border-left: 2px solid var(--blue);
+  background: rgba(255,255,255,.025);
+  border-radius: 0 12px 12px 0;
+  transition: .3s;
+}
+
+.experience:hover {
+  background: rgba(70,135,220,.09);
+  transform: translateX(5px);
+}
+
+.experience h3 {
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+.experience .company {
+  color: var(--cyan);
+  font-size: 14px;
+  margin-bottom: 9px;
+}
+
+.experience ul {
+  padding-left: 19px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.experience li {
+  margin: 5px 0;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 8px 13px;
+  background: rgba(65,135,225,.11);
+  border: 1px solid rgba(85,155,240,.25);
+  border-radius: 8px;
+  color: #c8e2ff;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  background: rgba(65,135,225,.24);
+  border-color: var(--blue);
+}
+
+/* Projects */
 .project {
- border:1px solid #e8edf4;border-radius:10px;padding:18px;
- margin-bottom:13px;
+  background: var(--panel-light);
+  padding: 20px;
+  border-radius: 13px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+  transition: .3s;
 }
-.project h3 {margin:0 0 8px;color:#315d91;font-size:16px}
-.project p {margin:0}
-.cert-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+.project:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+.project h3 {
+  color: #e3f0ff;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.project p {
+  font-size: 14px;
+}
+
+/* Certifications */
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
 .cert {
- background:#f1f5fa;border-radius:9px;padding:16px;
- color:#315078;font-weight:600;font-size:14px;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 16px;
+  color: #d8eaff;
+  font-size: 14px;
 }
-footer {text-align:center;color:#8995a5;font-size:12px;padding:20px}
-@media(max-width:800px) {
- .banner {height:210px;padding:25px}
- .banner h1 {font-size:29px}
- .layout {grid-template-columns:1fr;margin-top:-45px;padding:0 14px}
- .sidebar {position:relative;top:auto}
- .section {padding:22px 19px}
- .cert-grid {grid-template-columns:1fr}
+
+/* Scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+/* Mobile layout */
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin-top: 25px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .hero {
+    min-height: 230px;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    padding: 21px;
+  }
+
+  .cert-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<header class="banner">
- <div>
-  <h1>Building the Future with Azure & AI</h1>
-  <p>Cloud Architecture · Platform Engineering · AI Automation</p>
- </div>
+<div class="motion-orb orb-one"></div>
+<div class="motion-orb orb-two"></div>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <h1>Building the Future with <span>Azure & AI</span></h1>
+    <p>Cloud Infrastructure | Platform Architecture | AI Automation</p>
+  </div>
 </header>
 
-<div class="layout">
+<div class="container">
 
-<aside class="sidebar">
- <img class="profile-photo"
- src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=400&q=85"
- alt="Temporary floral profile image">
- <h2>Your Name</h2>
- <div class="role">AI Automation Platform Architect</div>
- <div class="location">Hyderabad, India</div>
+  <aside class="sidebar">
+    <img
+      class="profile-photo"
+      src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=400&q=85"
+      alt="Temporary floral profile image"
+    >
 
- <nav class="side-links">
-  <a href="#about">Professional Summary</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Technical Skills</a>
-  <a href="#projects">Key Projects</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#contact">Contact</a>
- </nav>
+    <h2>Your Name</h2>
+    <div class="role">AI Automation Platform Architect</div>
+    <div class="location">Hyderabad, India</div>
 
- <a class="contact-button" href="#contact">Let's Connect</a>
-</aside>
+    <div class="profile-line"></div>
 
-<main class="content">
+    <div class="profile-detail"><strong>Experience:</strong> 12+ Years</div>
+    <div class="profile-detail"><strong>Specialization:</strong> Azure & AI Platforms</div>
+    <div class="profile-detail"><strong>Cloud:</strong> Microsoft Azure</div>
+    <div class="profile-detail"><strong>Focus:</strong> Infrastructure & Automation</div>
 
-<section class="section" id="about">
- <h2>Professional Summary</h2>
- <p>
-  Azure Cloud and AI Automation Platform Architect with 12+ years
-  of IT experience spanning software testing, Azure administration,
-  cloud solution architecture and enterprise platform automation.
- </p>
- <p>
-  Experienced in Azure infrastructure, Infrastructure as Code,
-  Terraform, Terragrunt, GitHub Actions and Azure AI platform
-  components. Focused on building secure, scalable and automated
-  cloud environments and supporting enterprise AI solutions.
- </p>
-</section>
+    <div class="profile-line"></div>
 
-<section class="section" id="experience">
- <h2>Professional Experience</h2>
+    <nav class="sidebar-nav">
+      <a href="#about">About Me</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Technical Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
- <div class="experience">
-  <h3>Tata Consultancy Services (TCS)</h3>
-  <div class="meta">AI Automation Platform Architect | June 2023 – Present</div>
-  <ul>
-   <li>Contribute to enterprise Azure AI platform infrastructure and automation.</li>
-   <li>Work with Azure AI Foundry, Azure AI Search and Azure platform services.</li>
-   <li>Support infrastructure provisioning using Terraform and Terragrunt.</li>
-   <li>Work with GitHub Actions for infrastructure automation and deployment workflows.</li>
-   <li>Support networking, private endpoints, managed identities, RBAC and monitoring.</li>
-  </ul>
- </div>
+    <a class="contact-button" href="#contact">Let's Connect</a>
+  </aside>
 
- <div class="experience">
-  <h3>Accenture Solutions Pvt. Ltd.</h3>
-  <div class="meta">Azure Architect & Administrator | December 2020 – June 2023</div>
-  <ul>
-   <li>Worked on Azure cloud infrastructure administration and architecture activities.</li>
-   <li>Supported Azure resource management, access control and infrastructure operations.</li>
-   <li>Worked on cloud services, security configurations and operational support.</li>
-  </ul>
- </div>
+  <main class="content">
 
- <div class="experience">
-  <h3>Accenture Solutions Pvt. Ltd. (via Nexwave)</h3>
-  <div class="meta">Software Tester | May 2014 – December 2020</div>
-  <ul>
-   <li>Performed software testing and validation activities.</li>
-   <li>Supported test execution, defect identification and quality assurance.</li>
-  </ul>
- </div>
-</section>
+    <section class="section" id="about">
+      <h2>Professional Summary</h2>
+      <p>
+        Azure and AI Automation Platform Architect with 12+ years of IT
+        experience spanning software testing, Azure administration,
+        cloud architecture and infrastructure automation.
+        Experienced in designing and supporting enterprise Azure
+        environments, implementing Infrastructure as Code using
+        Terraform and Terragrunt, and automating deployments through
+        GitHub Actions.
+      </p>
+      <br>
+      <p>
+        Currently contributing to enterprise AI platform delivery
+        involving Azure AI Foundry, Azure AI Search, Azure Functions,
+        networking, security, identity and monitoring. Focused on
+        scalable, secure and automated cloud platform solutions.
+      </p>
+    </section>
 
-<section class="section" id="skills">
- <h2>Technical Expertise</h2>
- <div class="tag-list">
-  <span class="tag">Microsoft Azure</span>
-  <span class="tag">Azure AI Foundry</span>
-  <span class="tag">Azure AI Search</span>
-  <span class="tag">Azure Functions</span>
-  <span class="tag">Azure Networking</span>
-  <span class="tag">Terraform</span>
-  <span class="tag">Terragrunt</span>
-  <span class="tag">GitHub Actions</span>
-  <span class="tag">Infrastructure as Code</span>
-  <span class="tag">Azure Storage</span>
-  <span class="tag">Key Vault</span>
-  <span class="tag">Managed Identities</span>
-  <span class="tag">RBAC</span>
-  <span class="tag">Application Insights</span>
-  <span class="tag">CI/CD</span>
- </div>
-</section>
+    <section class="section" id="experience">
+      <h2>Professional Experience</h2>
 
-<section class="section" id="projects">
- <h2>Selected Projects & Architecture</h2>
+      <div class="experience">
+        <h3>AI Automation Platform Architect</h3>
+        <div class="company">TCS | June 2023 – Present</div>
+        <ul>
+          <li>Contribute to enterprise Azure AI platform architecture and infrastructure delivery.</li>
+          <li>Implement Azure infrastructure using Terraform and Terragrunt.</li>
+          <li>Automate infrastructure deployments using GitHub Actions CI/CD pipelines.</li>
+          <li>Work with Azure AI Foundry, AI Hub, Azure AI Search and Azure Functions.</li>
+          <li>Support Azure networking, private endpoints, private DNS, NSGs and managed identities.</li>
+          <li>Implement and support RBAC, Key Vault, Storage Accounts and Application Insights.</li>
+          <li>Contribute to platform reliability, security and infrastructure operations.</li>
+        </ul>
+      </div>
 
- <div class="project">
-  <h3>Enterprise Azure AI Platform</h3>
-  <p>
-   Azure AI platform environment involving Azure AI Foundry,
-   AI Search, Function Apps, Storage, Key Vault, networking,
-   managed identities and monitoring.
-  </p>
- </div>
+      <div class="experience">
+        <h3>Azure Architect & Administrator</h3>
+        <div class="company">Accenture Solutions Pvt. Ltd. | December 2020 – June 2023</div>
+        <ul>
+          <li>Worked on Azure cloud infrastructure administration and architecture.</li>
+          <li>Supported Azure resource provisioning, configuration and maintenance.</li>
+          <li>Worked on networking, access management and cloud infrastructure operations.</li>
+          <li>Supported enterprise application environments and infrastructure troubleshooting.</li>
+        </ul>
+      </div>
 
- <div class="project">
-  <h3>Infrastructure Automation with Terraform</h3>
-  <p>
-   Infrastructure provisioning and deployment workflows using
-   Terraform, Terragrunt and GitHub Actions.
-  </p>
- </div>
+      <div class="experience">
+        <h3>Software Tester</h3>
+        <div class="company">Accenture through Nexwave | May 2014 – December 2020</div>
+        <ul>
+          <li>Performed software testing and quality assurance activities.</li>
+          <li>Worked on test execution, defect identification and defect tracking.</li>
+          <li>Collaborated with development and business teams to support application quality.</li>
+        </ul>
+      </div>
+    </section>
 
- <div class="project">
-  <h3>Azure Network Security Architecture</h3>
-  <p>
-   Hub-and-spoke networking concepts, virtual networks,
-   subnets, network security groups, private endpoints
-   and private DNS.
-  </p>
- </div>
-</section>
+    <section class="section" id="skills">
+      <h2>Technical Expertise</h2>
+      <div class="skills">
+        <span class="skill">Microsoft Azure</span>
+        <span class="skill">Azure Architecture</span>
+        <span class="skill">Azure AI Foundry</span>
+        <span class="skill">Azure AI Hub</span>
+        <span class="skill">Azure AI Search</span>
+        <span class="skill">Terraform</span>
+        <span class="skill">Terragrunt</span>
+        <span class="skill">GitHub Actions</span>
+        <span class="skill">Infrastructure as Code</span>
+        <span class="skill">CI/CD Automation</span>
+        <span class="skill">Azure Functions</span>
+        <span class="skill">Azure App Services</span>
+        <span class="skill">Virtual Networks</span>
+        <span class="skill">Private Endpoints</span>
+        <span class="skill">Private DNS</span>
+        <span class="skill">Network Security Groups</span>
+        <span class="skill">Managed Identities</span>
+        <span class="skill">Azure RBAC</span>
+        <span class="skill">Azure Key Vault</span>
+        <span class="skill">Azure Storage</span>
+        <span class="skill">Application Insights</span>
+      </div>
+    </section>
 
-<section class="section" id="certifications">
- <h2>Certifications & Education</h2>
- <div class="cert-grid">
-  <div class="cert">Microsoft AZ-104<br>Azure Administrator</div>
-  <div class="cert">Microsoft AZ-305<br>Azure Solutions Architect</div>
-  <div class="cert">B.Sc. Computer Science<br>Education</div>
- </div>
-</section>
+    <section class="section" id="projects">
+      <h2>Selected Projects & Architecture</h2>
 
-<section class="section" id="contact">
- <h2>Let's Connect</h2>
- <p>
-  Interested in Azure Cloud Architecture, AI Platform Engineering,
-  Infrastructure Automation and Cloud Transformation opportunities.
- </p>
- <p><strong>Location:</strong> Hyderabad, India</p>
- <p><strong>Email:</strong> Replace with your professional email</p>
- <p><strong>LinkedIn:</strong> Add your LinkedIn profile URL</p>
-</section>
+      <div class="project">
+        <h3>Enterprise Azure AI Platform</h3>
+        <p>
+          Enterprise AI application platform built on Azure AI Foundry,
+          AI Hub, Azure AI Search, Azure Functions and supporting Azure
+          infrastructure services. Focus areas include platform
+          provisioning, security, networking and operational support.
+        </p>
+      </div>
 
-<footer>© 2026 ASAJ1 · Professional Portfolio</footer>
-</main>
+      <div class="project">
+        <h3>Infrastructure as Code & Deployment Automation</h3>
+        <p>
+          Azure infrastructure provisioning and deployment automation
+          using Terraform, Terragrunt and GitHub Actions, supporting
+          repeatable infrastructure deployments and controlled changes.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Azure Network & Security Architecture</h3>
+        <p>
+          Azure network architecture involving virtual networks,
+          subnets, private endpoints, private DNS zones, NSGs,
+          managed identities and role-based access control.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Azure Monitoring & Operations</h3>
+        <p>
+          Infrastructure and application monitoring using Azure
+          Application Insights and supporting Azure services,
+          with a focus on operational visibility and troubleshooting.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <h2>Certifications & Education</h2>
+
+      <div class="cert-list">
+        <div class="cert">Microsoft Certified: Azure Administrator Associate – AZ-104</div>
+        <div class="cert">Microsoft Certified: Azure Solutions Architect Expert – AZ-305</div>
+        <div class="cert">Bachelor of Science – Computer Science</div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Let's Connect</h2>
+      <p>
+        Interested in Azure Cloud Architecture, Platform Engineering,
+        Infrastructure Automation and Enterprise AI Platform opportunities.
+      </p>
+      <br>
+      <p><strong>Email:</strong> <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener">View LinkedIn Profile</a></p>
+    </section>
+
+  </main>
 </div>
+
+<footer>
+  © 2026 ASAJ1 | Azure & AI Platform Architect
+  <br>
+  Designed with purpose. Built for the future.
+</footer>
+
+<script>
+/* Create floating background particles */
+for (let i = 0; i < 24; i++) {
+  const particle = document.createElement("div");
+  particle.className = "particle";
+  particle.style.left = Math.random() * 100 + "vw";
+  particle.style.animationDuration = (9 + Math.random() * 13) + "s";
+  particle.style.animationDelay = (-Math.random() * 20) + "s";
+  document.body.appendChild(particle);
+}
+
+/* Reveal sections as they enter the screen */
+const revealElements = document.querySelectorAll(
+  ".section, .experience, .project"
+);
+
+revealElements.forEach(element => {
+  element.classList.add("scroll-reveal");
+});
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add("visible"));
+}
+
+/* Subtle parallax movement for the banner */
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  if (window.innerWidth > 850 && hero) {
+    const movement = Math.min(window.scrollY * 0.18, 65);
+    hero.style.backgroundPosition = `center calc(50% + ${movement}px)`;
+  }
+}, { passive: true });
+</script>
+
 </body>
 </html>
