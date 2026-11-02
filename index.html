@@ -1,1 +1,283 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASAJ1 | Azure & AI Platform Architect</title>
+<meta name="description" content="Professional portfolio of an Azure Cloud and AI Automation Platform Architect.">
+<style>
+:root {
+  --navy:#14243b;
+  --blue:#315d91;
+  --accent:#86a9d5;
+  --bg:#f4f6fa;
+  --text:#26364a;
+  --muted:#718096;
+  --white:#ffffff;
+}
+* {box-sizing:border-box;scroll-behavior:smooth}
+body {
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.banner {
+  height:245px;
+  background:
+    linear-gradient(90deg,rgba(15,30,52,.72),rgba(30,55,85,.15)),
+    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85") center 48%/cover;
+  display:flex;
+  align-items:center;
+  padding:45px 7%;
+  color:white;
+}
+.banner h1 {font-size:38px;margin:0 0 10px}
+.banner p {font-size:16px;margin:0;letter-spacing:.4px}
+.layout {
+  max-width:1250px;
+  margin:-65px auto 60px;
+  padding:0 24px;
+  display:grid;
+  grid-template-columns:285px minmax(0,1fr);
+  gap:25px;
+  align-items:start;
+}
+.sidebar {
+  background:white;
+  border-radius:16px;
+  padding:25px 22px;
+  box-shadow:0 8px 30px rgba(25,45,75,.08);
+  position:sticky;
+  top:20px;
+  text-align:center;
+}
+.profile-photo {
+  width:125px;
+  height:125px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid white;
+  box-shadow:0 3px 15px #0002;
+  margin-top:-75px;
+}
+.sidebar h2 {font-size:22px;margin:14px 0 5px;color:var(--navy)}
+.role {color:var(--blue);font-weight:600;font-size:13px;line-height:1.6}
+.location {font-size:13px;color:var(--muted);margin:12px 0 20px}
+.side-links {border-top:1px solid #edf0f4;padding-top:15px}
+.side-links a {
+ display:block;text-decoration:none;color:#53647b;
+ padding:9px 4px;font-size:14px;border-radius:7px;
+}
+.side-links a:hover {background:#edf3fa;color:var(--blue)}
+.contact-button {
+ display:block;margin-top:17px;padding:12px;
+ background:var(--navy);color:white;text-decoration:none;
+ border-radius:8px;font-weight:600;font-size:14px;
+}
+.content {min-width:0}
+.section {
+ background:white;border-radius:14px;padding:27px 30px;
+ margin-bottom:20px;box-shadow:0 5px 22px rgba(25,45,75,.045);
+ scroll-margin-top:20px;
+}
+.section h2 {
+ color:var(--navy);font-size:21px;margin:0 0 19px;
+ padding-bottom:12px;border-bottom:2px solid #e8eef6;
+}
+.section p {line-height:1.8;color:#58677a;font-size:14px}
+.tag-list {display:flex;flex-wrap:wrap;gap:9px}
+.tag {
+ background:#edf3fa;color:#315d91;padding:8px 12px;
+ border-radius:6px;font-size:12px;font-weight:600;
+}
+.experience {border-left:3px solid #91afd2;padding:0 0 22px 20px;margin-left:5px;position:relative}
+.experience:before {
+ content:"";position:absolute;left:-7px;top:3px;
+ width:11px;height:11px;background:#527aa8;border-radius:50%;
+}
+.experience h3 {margin:0 0 5px;color:#263d5b;font-size:17px}
+.meta {font-size:12px;color:var(--muted);margin-bottom:12px}
+.experience ul {padding-left:19px;color:#58677a;font-size:14px;line-height:1.8}
+.project {
+ border:1px solid #e8edf4;border-radius:10px;padding:18px;
+ margin-bottom:13px;
+}
+.project h3 {margin:0 0 8px;color:#315d91;font-size:16px}
+.project p {margin:0}
+.cert-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cert {
+ background:#f1f5fa;border-radius:9px;padding:16px;
+ color:#315078;font-weight:600;font-size:14px;
+}
+footer {text-align:center;color:#8995a5;font-size:12px;padding:20px}
+@media(max-width:800px) {
+ .banner {height:210px;padding:25px}
+ .banner h1 {font-size:29px}
+ .layout {grid-template-columns:1fr;margin-top:-45px;padding:0 14px}
+ .sidebar {position:relative;top:auto}
+ .section {padding:22px 19px}
+ .cert-grid {grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="banner">
+ <div>
+  <h1>Building the Future with Azure & AI</h1>
+  <p>Cloud Architecture · Platform Engineering · AI Automation</p>
+ </div>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+ <img class="profile-photo"
+ src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=400&q=85"
+ alt="Temporary floral profile image">
+ <h2>Your Name</h2>
+ <div class="role">AI Automation Platform Architect</div>
+ <div class="location">Hyderabad, India</div>
+
+ <nav class="side-links">
+  <a href="#about">Professional Summary</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Technical Skills</a>
+  <a href="#projects">Key Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
+ </nav>
+
+ <a class="contact-button" href="#contact">Let's Connect</a>
+</aside>
+
+<main class="content">
+
+<section class="section" id="about">
+ <h2>Professional Summary</h2>
+ <p>
+  Azure Cloud and AI Automation Platform Architect with 12+ years
+  of IT experience spanning software testing, Azure administration,
+  cloud solution architecture and enterprise platform automation.
+ </p>
+ <p>
+  Experienced in Azure infrastructure, Infrastructure as Code,
+  Terraform, Terragrunt, GitHub Actions and Azure AI platform
+  components. Focused on building secure, scalable and automated
+  cloud environments and supporting enterprise AI solutions.
+ </p>
+</section>
+
+<section class="section" id="experience">
+ <h2>Professional Experience</h2>
+
+ <div class="experience">
+  <h3>Tata Consultancy Services (TCS)</h3>
+  <div class="meta">AI Automation Platform Architect | June 2023 – Present</div>
+  <ul>
+   <li>Contribute to enterprise Azure AI platform infrastructure and automation.</li>
+   <li>Work with Azure AI Foundry, Azure AI Search and Azure platform services.</li>
+   <li>Support infrastructure provisioning using Terraform and Terragrunt.</li>
+   <li>Work with GitHub Actions for infrastructure automation and deployment workflows.</li>
+   <li>Support networking, private endpoints, managed identities, RBAC and monitoring.</li>
+  </ul>
+ </div>
+
+ <div class="experience">
+  <h3>Accenture Solutions Pvt. Ltd.</h3>
+  <div class="meta">Azure Architect & Administrator | December 2020 – June 2023</div>
+  <ul>
+   <li>Worked on Azure cloud infrastructure administration and architecture activities.</li>
+   <li>Supported Azure resource management, access control and infrastructure operations.</li>
+   <li>Worked on cloud services, security configurations and operational support.</li>
+  </ul>
+ </div>
+
+ <div class="experience">
+  <h3>Accenture Solutions Pvt. Ltd. (via Nexwave)</h3>
+  <div class="meta">Software Tester | May 2014 – December 2020</div>
+  <ul>
+   <li>Performed software testing and validation activities.</li>
+   <li>Supported test execution, defect identification and quality assurance.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="section" id="skills">
+ <h2>Technical Expertise</h2>
+ <div class="tag-list">
+  <span class="tag">Microsoft Azure</span>
+  <span class="tag">Azure AI Foundry</span>
+  <span class="tag">Azure AI Search</span>
+  <span class="tag">Azure Functions</span>
+  <span class="tag">Azure Networking</span>
+  <span class="tag">Terraform</span>
+  <span class="tag">Terragrunt</span>
+  <span class="tag">GitHub Actions</span>
+  <span class="tag">Infrastructure as Code</span>
+  <span class="tag">Azure Storage</span>
+  <span class="tag">Key Vault</span>
+  <span class="tag">Managed Identities</span>
+  <span class="tag">RBAC</span>
+  <span class="tag">Application Insights</span>
+  <span class="tag">CI/CD</span>
+ </div>
+</section>
+
+<section class="section" id="projects">
+ <h2>Selected Projects & Architecture</h2>
+
+ <div class="project">
+  <h3>Enterprise Azure AI Platform</h3>
+  <p>
+   Azure AI platform environment involving Azure AI Foundry,
+   AI Search, Function Apps, Storage, Key Vault, networking,
+   managed identities and monitoring.
+  </p>
+ </div>
+
+ <div class="project">
+  <h3>Infrastructure Automation with Terraform</h3>
+  <p>
+   Infrastructure provisioning and deployment workflows using
+   Terraform, Terragrunt and GitHub Actions.
+  </p>
+ </div>
+
+ <div class="project">
+  <h3>Azure Network Security Architecture</h3>
+  <p>
+   Hub-and-spoke networking concepts, virtual networks,
+   subnets, network security groups, private endpoints
+   and private DNS.
+  </p>
+ </div>
+</section>
+
+<section class="section" id="certifications">
+ <h2>Certifications & Education</h2>
+ <div class="cert-grid">
+  <div class="cert">Microsoft AZ-104<br>Azure Administrator</div>
+  <div class="cert">Microsoft AZ-305<br>Azure Solutions Architect</div>
+  <div class="cert">B.Sc. Computer Science<br>Education</div>
+ </div>
+</section>
+
+<section class="section" id="contact">
+ <h2>Let's Connect</h2>
+ <p>
+  Interested in Azure Cloud Architecture, AI Platform Engineering,
+  Infrastructure Automation and Cloud Transformation opportunities.
+ </p>
+ <p><strong>Location:</strong> Hyderabad, India</p>
+ <p><strong>Email:</strong> Replace with your professional email</p>
+ <p><strong>LinkedIn:</strong> Add your LinkedIn profile URL</p>
+</section>
+
+<footer>© 2026 ASAJ1 · Professional Portfolio</footer>
+</main>
+</div>
+</body>
+</html>
